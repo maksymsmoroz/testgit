@@ -1,5 +1,6 @@
 package com.example.mmoroz.testapplicationgit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),
                         myButton.getText().toString(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(), SetupActivity.class);
+                intent.putExtra("text", myButton.getText().toString());
+                startActivity(intent);
             }
         });
     }
